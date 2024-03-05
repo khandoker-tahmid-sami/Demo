@@ -10,7 +10,7 @@
     "bob": {
       "roles": ["employee", "billing"],
       "location": {
-        "country": "NORWAY",
+        "country": "NN",
         "ip": "8.8.8.8"
       }
     },
