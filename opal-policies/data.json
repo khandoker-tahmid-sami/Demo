@@ -2,89 +2,43 @@
   "users": {
     "alice": {
       "roles": ["admin"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
+      "location": "NORWAY",
+      "did": "did:sov:abcde4"
+    },
+    "john_doe": {
+      "roles": ["patient"],
+      "location": "NORWAY",
+      "did": "did:sov:abcde1",
+      "age": "30",
+      "gender": "male"
+    },
+    "sunil": {
+      "roles": ["doctor", "patient"],
+      "location": "NORWAY",
+      "did": "did:sov:abcde2",
+      "age": "35",
+      "gender": "male"
     },
     "bob": {
-      "roles": ["employee", "billing"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-     "sunil": {
-      "roles": ["guest"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "eve": {
-      "roles": ["customer"],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
+      "roles": ["patient"],
+      "location": "US",
+      "did": "did:sov:abcde3",
+      "age": "40",
+      "gender": "male"
     }
   },
   "role_permissions": {
-    "customer": [
+    "patient": [
       {
         "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "adopt",
-        "type": "dog"
-      },
-      {
-        "action": "adopt",
-        "type": "cat"
+        "type": "EHR"
       }
     ],
-    "employee": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
+    "doctor": [
       {
         "action": "update",
-        "type": "dog"
-      },
-      {
-        "action": "update",
-        "type": "cat"
+        "type": "EHR"
       }
-    ],
-    "billing": [
-      {
-        "action": "read",
-        "type": "finance"
-      },
-      {
-        "action": "update",
-        "type": "finance"
-      }
-    ],
-    "guest": [
-     {
-       "action": "read",
-       "type": "cat"
-     },
-     {
-       "action": "read",
-       "type": "finance"
-     }
     ]
   }
 }
