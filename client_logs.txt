@@ -1,0 +1,872 @@
+          │    └ <function PolicyUpdater.update_policy at 0x7f5b6dfa40d0>
+          └ <opal_client.policy.updater.PolicyUpdater object at 0x7f5b6dfc84c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 311, in update_policy
+    await store_transaction.set_policies(bundle)
+          │                 │            └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+          │                 └ <function AbstractPolicyStore.set_policies at 0x7f5b6e07f370>
+          └ <opal_client.policy_store.base_policy_store_client.PolicyStoreTransactionContextManager object at 0x7f5b6bc128c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 592, in set_policies   
+    return await self._set_policies_from_complete_bundle(bundle)
+                 │    │                                  └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+                 │    └ <function OpaClient._set_policies_from_complete_bundle at 0x7f5b6de54940>
+                 └ <opal_client.policy_store.opa_client.OpaClient object at 0x7f5b6dfc8490>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 651, in _set_policies_from_complete_bundle
+    await OpaClient._attempt_operations_with_postponed_failure_retry(
+          │         └ <staticmethod(<function OpaClient._attempt_operations_with_postponed_failure_retry at 0x7f5b6de548b0>)>
+          └ <class 'opal_client.policy_store.opa_client.OpaClient'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 630, in _attempt_operations_with_postponed_failure_retry
+    raise RuntimeError("Giving up setting / deleting failed modules to OPA")
+
+RuntimeError: Giving up setting / deleting failed modules to OPA
+2024-03-08T07:27:21.872142+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Trying server - ws://opal_server:7002/ws
+2024-03-08T07:27:21.885019+0000 | 17 | opal_client.policy.updater              | INFO  | Connected to server
+2024-03-08T07:27:21.885351+0000 | 17 | opal_client.policy.updater              | INFO  | Refetching policy code (full bundle)
+2024-03-08T07:27:21.885653+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetching policy bundle from http://opal_server:7002/policy
+2024-03-08T07:27:21.957084+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetched valid bundle, id: 054d30a4356a1f9a08c2f23297619872c264d770
+2024-03-08T07:27:21.957643+0000 | 17 | opal_client.policy.updater              | INFO  | Got policy bundle with 9 rego files, 2 data files, commit hash: '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:27:21.959738+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    GET /v1/policies
+2024-03-08T07:27:21.963454+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       GET /v1/policies -> 200
+2024-03-08T07:27:21.964924+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-master/docker/docker_files/cedar_data
+2024-03-08T07:27:21.965997+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-master/docker/docker_files/cedar_data -> 204
+2024-03-08T07:27:21.968266+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-policies
+2024-03-08T07:27:21.968884+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-policies -> 204   
+2024-03-08T07:27:21.979125+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego
+2024-03-08T07:27:21.980556+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego -> 200
+2024-03-08T07:27:21.984180+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:27:21.985014+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:27:21.987686+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:27:21.988398+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:27:21.991043+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego
+2024-03-08T07:27:21.991681+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego -> 200
+2024-03-08T07:27:21.994474+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:27:21.995217+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:27:22.005211+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego
+2024-03-08T07:27:22.006532+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego -> 200
+2024-03-08T07:27:22.010056+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego
+2024-03-08T07:27:22.011034+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego -> 200
+2024-03-08T07:27:22.013803+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/abac.rego
+2024-03-08T07:27:22.014171+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/abac.rego -> 200
+2024-03-08T07:27:22.016673+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/utils.rego
+2024-03-08T07:27:22.017271+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/utils.rego -> 200
+2024-03-08T07:27:22.019309+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:27:22.019871+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:27:22.022214+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:27:22.022964+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:27:22.025708+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:27:22.026323+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:27:22.026852+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "illegal default rule (value cannot contain var)",
+      "location": {
+        "file": "opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego",
+        "row": 6,
+        "col": 1
+      },
+      "details": {
+        "line": "default ready = {ready}",
+        "idx": 0
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:22.027041+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "unexpected eq token",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego",
+        "row": 19,
+        "col": 30
+      },
+      "details": {
+        "line": "package envoy.http.urlextract=",
+        "idx": 29
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:22.027177+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "package expected",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego",
+        "row": 18,
+        "col": 1
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:22.027478+0000 | 17 | opal_client...base_policy_store_client  |ERROR  | OPA transaction failed, transaction id=054d30a4356a1f9a08c2f23297619872c264d770, actions=['set_policies'], error=RuntimeError('Giving up setting / deleting failed modules to OPA')
+2024-03-08T07:27:22.029479+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Connection was terminated.
+2024-03-08T07:27:22.029797+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Closing RPC client
+2024-03-08T07:27:22.030179+0000 | 17 | opal_client.policy.updater              | INFO  | Disconnected from server
+2024-03-08T07:27:22.030513+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...|ERROR  | RPC Error
+Traceback (most recent call last):
+
+  File "/usr/local/bin/gunicorn", line 33, in <module>
+    sys.exit(load_entry_point('gunicorn==20.1.0', 'console_scripts', 'gunicorn')())
+    │   │    └ <function importlib_load_entry_point at 0x7f5b70b3edd0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+    └ <class 'gunicorn.app.wsgiapp.WSGIApplication'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+    │       └ <gunicorn.app.wsgiapp.WSGIApplication object at 0x7f5b70b1fee0>
+    └ <class 'gunicorn.arbiter.Arbiter'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+    │    └ <function Arbiter.manage_workers at 0x7f5b7001f1c0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+    │    └ <function Arbiter.spawn_workers at 0x7f5b7001f2e0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 622, in spawn_workers
+    self.spawn_worker()
+    │    └ <function Arbiter.spawn_worker at 0x7f5b7001f250>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+    │      └ <function UvicornWorker.init_process at 0x7f5b6ec168c0>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
+    super(UvicornWorker, self).init_process()
+          │              └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+          └ <class 'uvicorn.workers.UvicornWorker'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 142, in init_process
+    self.run()
+    │    └ <function UvicornWorker.run at 0x7f5b6ec16b00>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 98, in run
+    return asyncio.run(self._serve())
+           │       │   │    └ <function UvicornWorker._serve at 0x7f5b6ec16a70>
+           │       │   └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+           │       └ <function run at 0x7f5b6fbada20>
+           └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object UvicornWorker._serve at 0x7f5b6df93b50>
+           │    └ <method 'run_until_complete' of 'uvloop.loop.Loop' objects>
+           └ <uvloop.Loop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 198, in run
+    async with client:
+               └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 167, in __aenter__
+    return await retry(**self.retry_config)(self.__connect__)()
+                 │       │    │             │    └ <function WebSocketRpcClient.__connect__ at 0x7f5b6e0ae680>
+                 │       │    │             └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 │       │    └ {'wait': <tenacity.wait.wait_random_exponential object at 0x7f5b6df78430>, 'retry': <tenacity.retry.retry_if_exception object...
+                 │       └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 └ <function retry at 0x7f5b6e2151b0>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 88, in async_wrapped
+    return await fn(*args, **kwargs)
+                 │   │       └ {}
+                 │   └ ()
+                 └ <function WebSocketRpcClient.__connect__ at 0x7f5b6dd19990>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 50, in __call__
+    result = await fn(*args, **kwargs)
+                   │   │       └ {}
+                   │   └ ()
+                   └ <bound method WebSocketRpcClient.__connect__ of <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f...
+> File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 130, in __connect__
+    await self.channel.on_connect()
+          │    │       └ <function RpcChannel.on_connect at 0x7f5b6e0ad7e0>
+          │    └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc12cb0>
+          └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 271, in on_connect
+    await self.on_handler_event(self._connect_handlers, self)
+          │    │                │    │                  └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc12cb0>
+          │    │                │    └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │    │                └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc12cb0>
+          │    └ <function RpcChannel.on_handler_event at 0x7f5b6e0ad750>
+          └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc12cb0>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 261, in on_handler_event
+    await asyncio.gather(*(callback(*args, **kwargs) for callback in handlers))
+          │       │                  │       │                       └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │       │                  │       └ {}
+          │       │                  └ (<fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc12cb0>,)
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 248, in _primary_on_connect
+    await asyncio.gather(
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 157, in _on_connect
+    await self.update_policy()
+          │    └ <function PolicyUpdater.update_policy at 0x7f5b6dfa40d0>
+          └ <opal_client.policy.updater.PolicyUpdater object at 0x7f5b6dfc84c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 311, in update_policy
+    await store_transaction.set_policies(bundle)
+          │                 │            └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+          │                 └ <function AbstractPolicyStore.set_policies at 0x7f5b6e07f370>
+          └ <opal_client.policy_store.base_policy_store_client.PolicyStoreTransactionContextManager object at 0x7f5b6bc13880>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 592, in set_policies   
+    return await self._set_policies_from_complete_bundle(bundle)
+                 │    │                                  └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+                 │    └ <function OpaClient._set_policies_from_complete_bundle at 0x7f5b6de54940>
+                 └ <opal_client.policy_store.opa_client.OpaClient object at 0x7f5b6dfc8490>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 651, in _set_policies_from_complete_bundle
+    await OpaClient._attempt_operations_with_postponed_failure_retry(
+          │         └ <staticmethod(<function OpaClient._attempt_operations_with_postponed_failure_retry at 0x7f5b6de548b0>)>
+          └ <class 'opal_client.policy_store.opa_client.OpaClient'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 630, in _attempt_operations_with_postponed_failure_retry
+    raise RuntimeError("Giving up setting / deleting failed modules to OPA")
+
+RuntimeError: Giving up setting / deleting failed modules to OPA
+2024-03-08T07:27:51.504516+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Trying server - ws://opal_server:7002/ws
+2024-03-08T07:27:51.526923+0000 | 17 | opal_client.policy.updater              | INFO  | Connected to server
+2024-03-08T07:27:51.527319+0000 | 17 | opal_client.policy.updater              | INFO  | Refetching policy code (full bundle)
+2024-03-08T07:27:51.527817+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetching policy bundle from http://opal_server:7002/policy
+2024-03-08T07:27:51.624455+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetched valid bundle, id: 054d30a4356a1f9a08c2f23297619872c264d770
+2024-03-08T07:27:51.628154+0000 | 17 | opal_client.policy.updater              | INFO  | Got policy bundle with 9 rego files, 2 data files, commit hash: '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:27:51.638958+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    GET /v1/policies
+2024-03-08T07:27:51.646714+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       GET /v1/policies -> 200
+2024-03-08T07:27:51.648413+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-master/docker/docker_files/cedar_data
+2024-03-08T07:27:51.649335+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-master/docker/docker_files/cedar_data -> 204
+2024-03-08T07:27:51.651669+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-policies
+2024-03-08T07:27:51.652543+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-policies -> 204   
+2024-03-08T07:27:51.654991+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego
+2024-03-08T07:27:51.655582+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego -> 200
+2024-03-08T07:27:51.658376+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:27:51.658934+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:27:51.670042+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:27:51.671034+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:27:51.675153+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego
+2024-03-08T07:27:51.676026+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego -> 200
+2024-03-08T07:27:51.679370+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:27:51.680344+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:27:51.682802+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego
+2024-03-08T07:27:51.683366+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego -> 200
+2024-03-08T07:27:51.686061+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego
+2024-03-08T07:27:51.686892+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego -> 200
+2024-03-08T07:27:51.689186+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/abac.rego
+2024-03-08T07:27:51.689773+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/abac.rego -> 200
+2024-03-08T07:27:51.698839+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/utils.rego
+2024-03-08T07:27:51.700116+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/utils.rego -> 200
+2024-03-08T07:27:51.706088+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:27:51.706861+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:27:51.709523+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:27:51.710213+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:27:51.712295+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:27:51.712990+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:27:51.713468+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "illegal default rule (value cannot contain var)",
+      "location": {
+        "file": "opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego",
+        "row": 6,
+        "col": 1
+      },
+      "details": {
+        "line": "default ready = {ready}",
+        "idx": 0
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:51.713646+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "unexpected eq token",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego",
+        "row": 19,
+        "col": 30
+      },
+      "details": {
+        "line": "package envoy.http.urlextract=",
+        "idx": 29
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:51.713707+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "package expected",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego",
+        "row": 18,
+        "col": 1
+      }
+    }
+  ]
+}
+
+2024-03-08T07:27:51.713974+0000 | 17 | opal_client...base_policy_store_client  |ERROR  | OPA transaction failed, transaction id=054d30a4356a1f9a08c2f23297619872c264d770, actions=['set_policies'], error=RuntimeError('Giving up setting / deleting failed modules to OPA')
+2024-03-08T07:27:51.715766+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Connection was terminated.
+2024-03-08T07:27:51.715992+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Closing RPC client
+2024-03-08T07:27:51.717558+0000 | 17 | opal_client.policy.updater              | INFO  | Disconnected from server
+2024-03-08T07:27:51.717963+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...|ERROR  | RPC Error
+Traceback (most recent call last):
+
+  File "/usr/local/bin/gunicorn", line 33, in <module>
+    sys.exit(load_entry_point('gunicorn==20.1.0', 'console_scripts', 'gunicorn')())
+    │   │    └ <function importlib_load_entry_point at 0x7f5b70b3edd0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+    └ <class 'gunicorn.app.wsgiapp.WSGIApplication'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+    │       └ <gunicorn.app.wsgiapp.WSGIApplication object at 0x7f5b70b1fee0>
+    └ <class 'gunicorn.arbiter.Arbiter'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+    │    └ <function Arbiter.manage_workers at 0x7f5b7001f1c0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+    │    └ <function Arbiter.spawn_workers at 0x7f5b7001f2e0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 622, in spawn_workers
+    self.spawn_worker()
+    │    └ <function Arbiter.spawn_worker at 0x7f5b7001f250>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+    │      └ <function UvicornWorker.init_process at 0x7f5b6ec168c0>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
+    super(UvicornWorker, self).init_process()
+          │              └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+          └ <class 'uvicorn.workers.UvicornWorker'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 142, in init_process
+    self.run()
+    │    └ <function UvicornWorker.run at 0x7f5b6ec16b00>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 98, in run
+    return asyncio.run(self._serve())
+           │       │   │    └ <function UvicornWorker._serve at 0x7f5b6ec16a70>
+           │       │   └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+           │       └ <function run at 0x7f5b6fbada20>
+           └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object UvicornWorker._serve at 0x7f5b6df93b50>
+           │    └ <method 'run_until_complete' of 'uvloop.loop.Loop' objects>
+           └ <uvloop.Loop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 198, in run
+    async with client:
+               └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 167, in __aenter__
+    return await retry(**self.retry_config)(self.__connect__)()
+                 │       │    │             │    └ <function WebSocketRpcClient.__connect__ at 0x7f5b6e0ae680>
+                 │       │    │             └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 │       │    └ {'wait': <tenacity.wait.wait_random_exponential object at 0x7f5b6df78430>, 'retry': <tenacity.retry.retry_if_exception object...
+                 │       └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 └ <function retry at 0x7f5b6e2151b0>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 88, in async_wrapped
+    return await fn(*args, **kwargs)
+                 │   │       └ {}
+                 │   └ ()
+                 └ <function WebSocketRpcClient.__connect__ at 0x7f5b6dd19990>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 50, in __call__
+    result = await fn(*args, **kwargs)
+                   │   │       └ {}
+                   │   └ ()
+                   └ <bound method WebSocketRpcClient.__connect__ of <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f...
+> File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 130, in __connect__
+    await self.channel.on_connect()
+          │    │       └ <function RpcChannel.on_connect at 0x7f5b6e0ad7e0>
+          │    └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc137c0>
+          └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 271, in on_connect
+    await self.on_handler_event(self._connect_handlers, self)
+          │    │                │    │                  └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc137c0>
+          │    │                │    └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │    │                └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc137c0>
+          │    └ <function RpcChannel.on_handler_event at 0x7f5b6e0ad750>
+          └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc137c0>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 261, in on_handler_event
+    await asyncio.gather(*(callback(*args, **kwargs) for callback in handlers))
+          │       │                  │       │                       └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │       │                  │       └ {}
+          │       │                  └ (<fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc137c0>,)
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 248, in _primary_on_connect
+    await asyncio.gather(
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 157, in _on_connect
+    await self.update_policy()
+          │    └ <function PolicyUpdater.update_policy at 0x7f5b6dfa40d0>
+          └ <opal_client.policy.updater.PolicyUpdater object at 0x7f5b6dfc84c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 311, in update_policy
+    await store_transaction.set_policies(bundle)
+          │                 │            └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+          │                 └ <function AbstractPolicyStore.set_policies at 0x7f5b6e07f370>
+          └ <opal_client.policy_store.base_policy_store_client.PolicyStoreTransactionContextManager object at 0x7f5b6bc80130>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 592, in set_policies   
+    return await self._set_policies_from_complete_bundle(bundle)
+                 │    │                                  └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+                 │    └ <function OpaClient._set_policies_from_complete_bundle at 0x7f5b6de54940>
+                 └ <opal_client.policy_store.opa_client.OpaClient object at 0x7f5b6dfc8490>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 651, in _set_policies_from_complete_bundle
+    await OpaClient._attempt_operations_with_postponed_failure_retry(
+          │         └ <staticmethod(<function OpaClient._attempt_operations_with_postponed_failure_retry at 0x7f5b6de548b0>)>
+          └ <class 'opal_client.policy_store.opa_client.OpaClient'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 630, in _attempt_operations_with_postponed_failure_retry
+    raise RuntimeError("Giving up setting / deleting failed modules to OPA")
+
+RuntimeError: Giving up setting / deleting failed modules to OPA
+2024-03-08T07:29:15.298342+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Trying server - ws://opal_server:7002/ws
+2024-03-08T07:29:15.312539+0000 | 17 | opal_client.policy.updater              | INFO  | Connected to server
+2024-03-08T07:29:15.312734+0000 | 17 | opal_client.policy.updater              | INFO  | Refetching policy code (full bundle)
+2024-03-08T07:29:15.312923+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetching policy bundle from http://opal_server:7002/policy
+2024-03-08T07:29:15.373708+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetched valid bundle, id: 054d30a4356a1f9a08c2f23297619872c264d770
+2024-03-08T07:29:15.374205+0000 | 17 | opal_client.policy.updater              | INFO  | Got policy bundle with 9 rego files, 2 data files, commit hash: '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:29:15.376422+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    GET /v1/policies
+2024-03-08T07:29:15.380613+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       GET /v1/policies -> 200
+2024-03-08T07:29:15.382215+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-master/docker/docker_files/cedar_data
+2024-03-08T07:29:15.383122+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-master/docker/docker_files/cedar_data -> 204
+2024-03-08T07:29:15.385545+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-policies
+2024-03-08T07:29:15.386122+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-policies -> 204   
+2024-03-08T07:29:15.388468+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego
+2024-03-08T07:29:15.388965+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego -> 200
+2024-03-08T07:29:15.392113+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:29:15.392672+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:29:15.394604+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:29:15.395140+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:29:15.397150+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego
+2024-03-08T07:29:15.397849+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego -> 200
+2024-03-08T07:29:15.400078+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:29:15.400651+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:29:15.403004+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego
+2024-03-08T07:29:15.403525+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego -> 200
+2024-03-08T07:29:15.405554+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego
+2024-03-08T07:29:15.406583+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego -> 200
+2024-03-08T07:29:15.409220+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/abac.rego
+2024-03-08T07:29:15.409584+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/abac.rego -> 200
+2024-03-08T07:29:15.411461+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/utils.rego
+2024-03-08T07:29:15.412013+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/utils.rego -> 200
+2024-03-08T07:29:15.413967+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:29:15.414469+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:29:15.416353+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:29:15.416852+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:29:15.419216+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:29:15.419877+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:29:15.420308+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "illegal default rule (value cannot contain var)",
+      "location": {
+        "file": "opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego",
+        "row": 6,
+        "col": 1
+      },
+      "details": {
+        "line": "default ready = {ready}",
+        "idx": 0
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:15.420455+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "unexpected eq token",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego",
+        "row": 19,
+        "col": 30
+      },
+      "details": {
+        "line": "package envoy.http.urlextract=",
+        "idx": 29
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:15.420511+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "package expected",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego",
+        "row": 18,
+        "col": 1
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:15.420734+0000 | 17 | opal_client...base_policy_store_client  |ERROR  | OPA transaction failed, transaction id=054d30a4356a1f9a08c2f23297619872c264d770, actions=['set_policies'], error=RuntimeError('Giving up setting / deleting failed modules to OPA')
+2024-03-08T07:29:15.423716+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Connection was terminated.
+2024-03-08T07:29:15.425509+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Closing RPC client
+2024-03-08T07:29:15.426557+0000 | 17 | opal_client.policy.updater              | INFO  | Disconnected from server
+2024-03-08T07:29:15.427204+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...|ERROR  | RPC Error
+Traceback (most recent call last):
+
+  File "/usr/local/bin/gunicorn", line 33, in <module>
+    sys.exit(load_entry_point('gunicorn==20.1.0', 'console_scripts', 'gunicorn')())
+    │   │    └ <function importlib_load_entry_point at 0x7f5b70b3edd0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+    └ <class 'gunicorn.app.wsgiapp.WSGIApplication'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+    │       └ <gunicorn.app.wsgiapp.WSGIApplication object at 0x7f5b70b1fee0>
+    └ <class 'gunicorn.arbiter.Arbiter'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+    │    └ <function Arbiter.manage_workers at 0x7f5b7001f1c0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+    │    └ <function Arbiter.spawn_workers at 0x7f5b7001f2e0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 622, in spawn_workers
+    self.spawn_worker()
+    │    └ <function Arbiter.spawn_worker at 0x7f5b7001f250>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+    │      └ <function UvicornWorker.init_process at 0x7f5b6ec168c0>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
+    super(UvicornWorker, self).init_process()
+          │              └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+          └ <class 'uvicorn.workers.UvicornWorker'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 142, in init_process
+    self.run()
+    │    └ <function UvicornWorker.run at 0x7f5b6ec16b00>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 98, in run
+    return asyncio.run(self._serve())
+           │       │   │    └ <function UvicornWorker._serve at 0x7f5b6ec16a70>
+           │       │   └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+           │       └ <function run at 0x7f5b6fbada20>
+           └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object UvicornWorker._serve at 0x7f5b6df93b50>
+           │    └ <method 'run_until_complete' of 'uvloop.loop.Loop' objects>
+           └ <uvloop.Loop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 198, in run
+    async with client:
+               └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 167, in __aenter__
+    return await retry(**self.retry_config)(self.__connect__)()
+                 │       │    │             │    └ <function WebSocketRpcClient.__connect__ at 0x7f5b6e0ae680>
+                 │       │    │             └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 │       │    └ {'wait': <tenacity.wait.wait_random_exponential object at 0x7f5b6df78430>, 'retry': <tenacity.retry.retry_if_exception object...
+                 │       └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 └ <function retry at 0x7f5b6e2151b0>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 88, in async_wrapped
+    return await fn(*args, **kwargs)
+                 │   │       └ {}
+                 │   └ ()
+                 └ <function WebSocketRpcClient.__connect__ at 0x7f5b6dd19990>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 50, in __call__
+    result = await fn(*args, **kwargs)
+                   │   │       └ {}
+                   │   └ ()
+                   └ <bound method WebSocketRpcClient.__connect__ of <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f...
+> File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 130, in __connect__
+    await self.channel.on_connect()
+          │    │       └ <function RpcChannel.on_connect at 0x7f5b6e0ad7e0>
+          │    └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc132e0>
+          └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 271, in on_connect
+    await self.on_handler_event(self._connect_handlers, self)
+          │    │                │    │                  └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc132e0>
+          │    │                │    └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │    │                └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc132e0>
+          │    └ <function RpcChannel.on_handler_event at 0x7f5b6e0ad750>
+          └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc132e0>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 261, in on_handler_event
+    await asyncio.gather(*(callback(*args, **kwargs) for callback in handlers))
+          │       │                  │       │                       └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │       │                  │       └ {}
+          │       │                  └ (<fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc132e0>,)
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 248, in _primary_on_connect
+    await asyncio.gather(
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 157, in _on_connect
+    await self.update_policy()
+          │    └ <function PolicyUpdater.update_policy at 0x7f5b6dfa40d0>
+          └ <opal_client.policy.updater.PolicyUpdater object at 0x7f5b6dfc84c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 311, in update_policy
+    await store_transaction.set_policies(bundle)
+          │                 │            └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+          │                 └ <function AbstractPolicyStore.set_policies at 0x7f5b6e07f370>
+          └ <opal_client.policy_store.base_policy_store_client.PolicyStoreTransactionContextManager object at 0x7f5b6bc80d90>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 592, in set_policies   
+    return await self._set_policies_from_complete_bundle(bundle)
+                 │    │                                  └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+                 │    └ <function OpaClient._set_policies_from_complete_bundle at 0x7f5b6de54940>
+                 └ <opal_client.policy_store.opa_client.OpaClient object at 0x7f5b6dfc8490>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 651, in _set_policies_from_complete_bundle
+    await OpaClient._attempt_operations_with_postponed_failure_retry(
+          │         └ <staticmethod(<function OpaClient._attempt_operations_with_postponed_failure_retry at 0x7f5b6de548b0>)>
+          └ <class 'opal_client.policy_store.opa_client.OpaClient'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 630, in _attempt_operations_with_postponed_failure_retry
+    raise RuntimeError("Giving up setting / deleting failed modules to OPA")
+
+RuntimeError: Giving up setting / deleting failed modules to OPA
+2024-03-08T07:29:37.976658+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Trying server - ws://opal_server:7002/ws
+2024-03-08T07:29:37.988048+0000 | 17 | opal_client.policy.updater              | INFO  | Connected to server
+2024-03-08T07:29:37.988251+0000 | 17 | opal_client.policy.updater              | INFO  | Refetching policy code (full bundle)
+2024-03-08T07:29:37.988431+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetching policy bundle from http://opal_server:7002/policy
+2024-03-08T07:29:38.059022+0000 | 17 | opal_client.policy.fetcher              | INFO  | Fetched valid bundle, id: 054d30a4356a1f9a08c2f23297619872c264d770
+2024-03-08T07:29:38.059657+0000 | 17 | opal_client.policy.updater              | INFO  | Got policy bundle with 9 rego files, 2 data files, commit hash: '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:29:38.061758+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    GET /v1/policies
+2024-03-08T07:29:38.065449+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       GET /v1/policies -> 200
+2024-03-08T07:29:38.066905+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-master/docker/docker_files/cedar_data
+2024-03-08T07:29:38.067653+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-master/docker/docker_files/cedar_data -> 204
+2024-03-08T07:29:38.070314+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/data/opal-policies
+2024-03-08T07:29:38.070986+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/data/opal-policies -> 204   
+2024-03-08T07:29:38.081317+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego
+2024-03-08T07:29:38.082600+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/docker/docker_files/policy_test/authz.rego -> 200
+2024-03-08T07:29:38.087427+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:29:38.088190+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:29:38.090728+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:29:38.091491+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:29:38.093736+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego
+2024-03-08T07:29:38.094286+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/jwt.rego -> 200
+2024-03-08T07:29:38.096601+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:29:38.097200+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:29:38.107373+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego
+2024-03-08T07:29:38.108678+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/play.rego -> 200
+2024-03-08T07:29:38.112260+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego
+2024-03-08T07:29:38.113070+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/rbac.rego -> 200
+2024-03-08T07:29:38.116008+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/abac.rego
+2024-03-08T07:29:38.116651+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/abac.rego -> 200
+2024-03-08T07:29:38.119459+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-policies/utils.rego
+2024-03-08T07:29:38.120032+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-policies/utils.rego -> 200
+2024-03-08T07:29:38.121976+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego
+2024-03-08T07:29:38.122485+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego -> 400
+2024-03-08T07:29:38.124344+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego
+2024-03-08T07:29:38.124991+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego -> 400
+2024-03-08T07:29:38.126883+0000 | 17 | opal_client.engine.logger               | INFO  | Received request.    PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego
+2024-03-08T07:29:38.127374+0000 | 17 | opal_client.engine.logger               | INFO  | Sent response.       PUT /v1/policies/opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego -> 400
+2024-03-08T07:29:38.127690+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "illegal default rule (value cannot contain var)",
+      "location": {
+        "file": "opal-master/packages/opal-client/opal_client/engine/healthcheck/opal.rego",
+        "row": 6,
+        "col": 1
+      },
+      "details": {
+        "line": "default ready = {ready}",
+        "idx": 0
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:38.127801+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "unexpected eq token",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/invalid-package.rego",
+        "row": 19,
+        "col": 30
+      },
+      "details": {
+        "line": "package envoy.http.urlextract=",
+        "idx": 29
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:38.127857+0000 | 17 | opal_client.policy_store.opa_client     |ERROR  | Failed policy operation. status: 400, body: {
+  "code": "invalid_parameter",
+  "message": "error(s) occurred while compiling module(s)",
+  "errors": [
+    {
+      "code": "rego_parse_error",
+      "message": "package expected",
+      "location": {
+        "file": "opal-master/packages/opal-common/opal_common/engine/tests/fixtures/no-package.rego",
+        "row": 18,
+        "col": 1
+      }
+    }
+  ]
+}
+
+2024-03-08T07:29:38.128038+0000 | 17 | opal_client...base_policy_store_client  |ERROR  | OPA transaction failed, transaction id=054d30a4356a1f9a08c2f23297619872c264d770, actions=['set_policies'], error=RuntimeError('Giving up setting / deleting failed modules to OPA')
+2024-03-08T07:29:38.129794+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Connection was terminated.
+2024-03-08T07:29:38.129977+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...| INFO  | Closing RPC client
+2024-03-08T07:29:38.130172+0000 | 17 | opal_client.policy.updater              | INFO  | Disconnected from server
+2024-03-08T07:29:38.130435+0000 | 17 | fastapi_websocket_rpc.websocket_rpc_c...|ERROR  | RPC Error
+Traceback (most recent call last):
+
+  File "/usr/local/bin/gunicorn", line 33, in <module>
+    sys.exit(load_entry_point('gunicorn==20.1.0', 'console_scripts', 'gunicorn')())
+    │   │    └ <function importlib_load_entry_point at 0x7f5b70b3edd0>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+    └ <class 'gunicorn.app.wsgiapp.WSGIApplication'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+    │       └ <gunicorn.app.wsgiapp.WSGIApplication object at 0x7f5b70b1fee0>
+    └ <class 'gunicorn.arbiter.Arbiter'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+    │    └ <function Arbiter.manage_workers at 0x7f5b7001f1c0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+    │    └ <function Arbiter.spawn_workers at 0x7f5b7001f2e0>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 622, in spawn_workers
+    self.spawn_worker()
+    │    └ <function Arbiter.spawn_worker at 0x7f5b7001f250>
+    └ <gunicorn.arbiter.Arbiter object at 0x7f5b6fb3f820>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+    │      └ <function UvicornWorker.init_process at 0x7f5b6ec168c0>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
+    super(UvicornWorker, self).init_process()
+          │              └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+          └ <class 'uvicorn.workers.UvicornWorker'>
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 142, in init_process
+    self.run()
+    │    └ <function UvicornWorker.run at 0x7f5b6ec16b00>
+    └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/workers.py", line 98, in run
+    return asyncio.run(self._serve())
+           │       │   │    └ <function UvicornWorker._serve at 0x7f5b6ec16a70>
+           │       │   └ <uvicorn.workers.UvicornWorker object at 0x7f5b6fb3f790>
+           │       └ <function run at 0x7f5b6fbada20>
+           └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object UvicornWorker._serve at 0x7f5b6df93b50>
+           │    └ <method 'run_until_complete' of 'uvloop.loop.Loop' objects>
+           └ <uvloop.Loop running=True closed=False debug=False>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 198, in run
+    async with client:
+               └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 167, in __aenter__
+    return await retry(**self.retry_config)(self.__connect__)()
+                 │       │    │             │    └ <function WebSocketRpcClient.__connect__ at 0x7f5b6e0ae680>
+                 │       │    │             └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 │       │    └ {'wait': <tenacity.wait.wait_random_exponential object at 0x7f5b6df78430>, 'retry': <tenacity.retry.retry_if_exception object...
+                 │       └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+                 └ <function retry at 0x7f5b6e2151b0>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 88, in async_wrapped
+    return await fn(*args, **kwargs)
+                 │   │       └ {}
+                 │   └ ()
+                 └ <function WebSocketRpcClient.__connect__ at 0x7f5b6dd19990>
+  File "/usr/local/lib/python3.10/site-packages/tenacity/_asyncio.py", line 50, in __call__
+    result = await fn(*args, **kwargs)
+                   │   │       └ {}
+                   │   └ ()
+                   └ <bound method WebSocketRpcClient.__connect__ of <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f...
+> File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/websocket_rpc_client.py", line 130, in __connect__
+    await self.channel.on_connect()
+          │    │       └ <function RpcChannel.on_connect at 0x7f5b6e0ad7e0>
+          │    └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc80310>
+          └ <fastapi_websocket_rpc.websocket_rpc_client.WebSocketRpcClient object at 0x7f5b6df33d90>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 271, in on_connect
+    await self.on_handler_event(self._connect_handlers, self)
+          │    │                │    │                  └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc80310>
+          │    │                │    └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │    │                └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc80310>
+          │    └ <function RpcChannel.on_handler_event at 0x7f5b6e0ad750>
+          └ <fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc80310>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_rpc/rpc_channel.py", line 261, in on_handler_event
+    await asyncio.gather(*(callback(*args, **kwargs) for callback in handlers))
+          │       │                  │       │                       └ [<bound method PubSubClient._primary_on_connect of <fastapi_websocket_pubsub.pub_sub_client.PubSubClient object at 0x7f5b6df3...
+          │       │                  │       └ {}
+          │       │                  └ (<fastapi_websocket_rpc.rpc_channel.RpcChannel object at 0x7f5b6bc80310>,)
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/fastapi_websocket_pubsub/pub_sub_client.py", line 248, in _primary_on_connect
+    await asyncio.gather(
+          │       └ <function gather at 0x7f5b6f9e7400>
+          └ <module 'asyncio' from '/usr/local/lib/python3.10/asyncio/__init__.py'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 157, in _on_connect
+    await self.update_policy()
+          │    └ <function PolicyUpdater.update_policy at 0x7f5b6dfa40d0>
+          └ <opal_client.policy.updater.PolicyUpdater object at 0x7f5b6dfc84c0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy/updater.py", line 311, in update_policy
+    await store_transaction.set_policies(bundle)
+          │                 │            └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+          │                 └ <function AbstractPolicyStore.set_policies at 0x7f5b6e07f370>
+          └ <opal_client.policy_store.base_policy_store_client.PolicyStoreTransactionContextManager object at 0x7f5b6bc80fa0>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 592, in set_policies   
+    return await self._set_policies_from_complete_bundle(bundle)
+                 │    │                                  └ PolicyBundle(manifest=['opal-master/docker/docker_files/cedar_data/data.json', 'opal-master/docker/docker_files/policy_test/a...
+                 │    └ <function OpaClient._set_policies_from_complete_bundle at 0x7f5b6de54940>
+                 └ <opal_client.policy_store.opa_client.OpaClient object at 0x7f5b6dfc8490>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 651, in _set_policies_from_complete_bundle
+    await OpaClient._attempt_operations_with_postponed_failure_retry(
+          │         └ <staticmethod(<function OpaClient._attempt_operations_with_postponed_failure_retry at 0x7f5b6de548b0>)>
+          └ <class 'opal_client.policy_store.opa_client.OpaClient'>
+  File "/usr/local/lib/python3.10/site-packages/opal_client-0.7.4-py3.10.egg/opal_client/policy_store/opa_client.py", line 630, in _attempt_operations_with_postponed_failure_retry
+    raise RuntimeError("Giving up setting / deleting failed modules to OPA")
+
+RuntimeError: Giving up setting / deleting failed modules to OPA

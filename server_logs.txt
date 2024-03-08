@@ -1,0 +1,627 @@
+[2024-03-08 07:06:29 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2024-03-08 07:06:29 +0000] [1] [INFO] Listening at: http://0.0.0.0:7002 (1)
+[2024-03-08 07:06:29 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+2024-03-08 07:06:30.315 | WARNING  | __config__:when_ready:34 - Finished pre loading scopes...
+[2024-03-08 07:06:30 +0000] [9] [INFO] Booting worker with pid: 9
+2024-03-08T07:06:30.402618+0000 | 9 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:06:30.403206+0000 | 9 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+[2024-03-08 07:06:30 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-08 07:06:30 +0000] [11] [INFO] Booting worker with pid: 11
+2024-03-08T07:06:30.483920+0000 | 10 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:06:30.485587+0000 | 10 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+[2024-03-08 07:06:30 +0000] [13] [INFO] Booting worker with pid: 13
+2024-03-08T07:06:30.510601+0000 | 9 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:06:30.511035+0000 | 9 | opal_server.server                      | INFO  | leadership lock acquired, leader pid: 9
+2024-03-08T07:06:30.511260+0000 | 9 | opal_common.topics.publisher            | INFO  | started broadcaster keepalive task: topic is '__broadcast_session_keepalive__', interval is 3600 seconds
+2024-03-08T07:06:30.512229+0000 | 9 | opal_server.policy.watcher.factory      | INFO  | Policy repo will be cloned to: /opal/regoclone/opal_repo_clone
+2024-03-08T07:06:30.512699+0000 | 9 | opal_server.policy.watcher.task         | INFO  | Launching policy watcher
+2024-03-08T07:06:30.513445+0000 | 9 | opal_server.data.data_update_publisher  | INFO  | [9] Starting Polling Updates
+2024-03-08T07:06:30.514885+0000 | 9 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:06:30.515216+0000 | 9 | opal_server.policy.watcher.task         | INFO  | listening on webhook topic: 'webhook'
+2024-03-08T07:06:30.515553+0000 | 9 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'ce819b2f8096472d9fb53c0e79abb17b', 'subscriber_id': 'cc9c92e85ef146f2b826a1e1b44111ed', 'topic': 'webhook', 'callback': <bound method BasePolicyWatcherTask._on_webhook of <opal_server.policy.watcher.task.PolicyWatcherTask object at 0x7fe5df4fec80>>, 'notifier_id': None}
+2024-03-08T07:06:30.517653+0000 | 9 | opal_common.git.repo_cloner             | INFO  | Cloning repo from 'https://github.com/khandoker-tahmid-sami/Demo.git' to '/opal/regoclone/opal_repo_clone' (branch: 'main')
+2024-03-08T07:06:30.519328+0000 | 9 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:06:30.547749+0000 | 11 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:06:30.551248+0000 | 11 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+2024-03-08T07:06:30.598506+0000 | 13 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:06:30.599150+0000 | 13 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+2024-03-08T07:06:30.613709+0000 | 10 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:06:30.650683+0000 | 11 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:06:30.701195+0000 | 13 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:06:31.754411+0000 | 9 | opal_common.git.repo_cloner             | INFO  | Clone succeeded
+2024-03-08T07:06:31.773707+0000 | 9 | opal_common.sources.base_policy_source  | INFO  | Launching polling task, interval: 30 seconds
+2024-03-08T07:06:31.774419+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:06:32.199476+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:06:32.873972+0000 | 13 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:06:32.882794+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:06:32.904361+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '10a47c06e89a4c539a76a79b2f3eb6c5', 'subscriber_id': 'cbdf45e847b04bd1ad0bdd2b55bd27e1', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54b730>>, 'notifier_id': None}
+2024-03-08T07:06:32.907780+0000 | 13 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:06:32.921407+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:32.923105+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '31946576cfa2452ab011b6ef3fcbfb2e', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:06:32.923756+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:06:32.927064+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:32.931562+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:32.932713+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:32.981417+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '975e97d5c5ae4cf78227b78145e8a237', 'subscriber_id': 'c60f39259ef3465c8b44b71f9fe0f420', 'topic': 'policy_data', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4a170>, 'notifier_id': None}
+2024-03-08T07:06:32.984518+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '251ae1a58198462c8a5cfb58a21cc2f5', 'subscriber_id': '9fdf0daf0958457cb643a37a09af3393', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4a0e0>, 'notifier_id': None}
+2024-03-08T07:06:32.991077+0000 | 11 | opal_server.data.api                    | INFO  | Serving source configuration
+2024-03-08T07:06:32.991878+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34768 - "GET /data/config HTTP/1.1" 200       
+2024-03-08T07:06:32.998234+0000 | 11 | opal_server.data.api                    |WARNING | Serving default all-data route, meaning DATA_CONFIG_SOURCES was not configured!
+2024-03-08T07:06:32.998598+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34780 - "GET /policy-data HTTP/1.1" 200       
+2024-03-08T07:06:33.027595+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:33.028271+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:33.048106+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:33.087758+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34776 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:33.196369+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34752 :: 9fdf0daf0958457cb643a37a09af3393
+2024-03-08T07:06:33.196867+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=9fdf0daf0958457cb643a37a09af3393
+2024-03-08T07:06:33.197245+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:06:33.197690+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:06:33.198015+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:06:33.430055+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:33.430602+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:33.435948+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '04937019a5014410994fe71e1a38648e', 'subscriber_id': 'de8280349a6d47f6bddb7f1cb5c31415', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b2e0>, 'notifier_id': None}
+2024-03-08T07:06:33.464859+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:33.465031+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:33.481370+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:33.510377+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34790 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:33.596242+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34784 :: de8280349a6d47f6bddb7f1cb5c31415
+2024-03-08T07:06:33.597580+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=de8280349a6d47f6bddb7f1cb5c31415
+2024-03-08T07:06:33.598435+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:06:35.341986+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:35.342521+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:35.348219+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'd15c59e3cbdd4d16ae520564d11ad8c5', 'subscriber_id': '4bff10d2855f4d1eaf1f713a417dcf8e', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b250>, 'notifier_id': None}
+2024-03-08T07:06:35.374076+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:35.374270+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:35.392023+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:35.430127+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34810 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:35.495633+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34794 :: 4bff10d2855f4d1eaf1f713a417dcf8e
+2024-03-08T07:06:35.496073+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=4bff10d2855f4d1eaf1f713a417dcf8e
+2024-03-08T07:06:35.496500+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:06:36.199828+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:36.200258+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:36.207434+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '554ee8fc4ee74b6cb1620ed30b9bc3dd', 'subscriber_id': '5ea0563f0bd64d889c03ce30f976a918', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b490>, 'notifier_id': None}
+2024-03-08T07:06:36.257051+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:36.257307+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:36.305055+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:36.335477+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34826 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:36.427967+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34814 :: 5ea0563f0bd64d889c03ce30f976a918
+2024-03-08T07:06:36.428355+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=5ea0563f0bd64d889c03ce30f976a918
+2024-03-08T07:06:36.429807+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:06:41.507036+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:06:41.507413+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'a8c6d174c82349d8aba4db15ce19883f', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:06:41.507623+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:06:41.508520+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:41.509203+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:41.541232+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '54a3ee631e424bc68dbf34a1d65b0d47', 'subscriber_id': '4b029f78cd824904a1ee214dc4d275dd', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b130>, 'notifier_id': None}
+2024-03-08T07:06:41.587407+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:41.587638+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:41.605227+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:41.628512+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34838 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:41.708410+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34836 :: 4b029f78cd824904a1ee214dc4d275dd
+2024-03-08T07:06:41.708747+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=4b029f78cd824904a1ee214dc4d275dd
+2024-03-08T07:06:41.708957+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:06:41.709234+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:06:41.709475+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:06:47.985174+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:06:47.985836+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:06:47.991657+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '965b83f70d18402cbdf0af0721c374df', 'subscriber_id': 'db165fb6a0b84c03afefc1613170aa28', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4add0>, 'notifier_id': None}
+2024-03-08T07:06:48.017633+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:06:48.017845+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:06:48.033152+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:06:48.057097+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:41542 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:06:48.129086+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 41538 :: db165fb6a0b84c03afefc1613170aa28
+2024-03-08T07:06:48.129638+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=db165fb6a0b84c03afefc1613170aa28
+2024-03-08T07:06:48.130023+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:07:02.200589+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:07:02.639906+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:07:02.758392+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:07:02.758767+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:07:02.765497+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '21c9cf4293e643c7997c2bdd6dc6d89e', 'subscriber_id': 'fa4380a8532445afa0aa8c2839d39bcb', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b0a0>, 'notifier_id': None}
+2024-03-08T07:07:02.793835+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:07:02.794019+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:07:02.810090+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:07:02.850664+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:51228 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:07:02.942125+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 51222 :: fa4380a8532445afa0aa8c2839d39bcb
+2024-03-08T07:07:02.943588+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=fa4380a8532445afa0aa8c2839d39bcb
+2024-03-08T07:07:02.944626+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:07:16.490126+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:07:16.490526+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:07:16.495971+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '29be705545be4d6096786a23cf6a019a', 'subscriber_id': 'b3266805ce1d498c964c47ff662317e7', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4ab90>, 'notifier_id': None}
+2024-03-08T07:07:16.536084+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:07:16.536265+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:07:16.551066+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:07:16.585551+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:39722 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:07:16.681269+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 39714 :: b3266805ce1d498c964c47ff662317e7
+2024-03-08T07:07:16.681707+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=b3266805ce1d498c964c47ff662317e7
+2024-03-08T07:07:16.681924+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:07:32.642038+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:07:33.451188+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:08:03.452660+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:08:04.763012+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:08:34.763954+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:08:35.018307+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:08:35.018833+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '9985f39e3e3a4c2897a823b9fbb29461', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:08:35.019055+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:08:35.020121+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:08:35.020885+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:08:35.070010+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '71acdbcb6d6a4dfe9c0fd43faba6cf7e', 'subscriber_id': '612d796fab9f4073910ee291ae24f0cd', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5deb11ea0>, 'notifier_id': None}
+2024-03-08T07:08:35.126656+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:08:35.126846+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:08:35.158879+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:08:35.182054+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:57060 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:08:35.275437+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 57044 :: 612d796fab9f4073910ee291ae24f0cd
+2024-03-08T07:08:35.275815+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=612d796fab9f4073910ee291ae24f0cd
+2024-03-08T07:08:35.276067+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:08:35.276370+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:08:35.276584+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:08:35.864515+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:08:45.341744+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:08:45.342278+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:08:45.360267+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'b766ab39be374962a405e4cc52d7567c', 'subscriber_id': 'fc98449a3cc0432faebf88b66087384c', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b490>, 'notifier_id': None}
+2024-03-08T07:08:45.390146+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:08:45.390361+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:08:45.404128+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:08:45.442583+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:52044 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:08:45.523222+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 52038 :: fc98449a3cc0432faebf88b66087384c
+2024-03-08T07:08:45.523609+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=fc98449a3cc0432faebf88b66087384c
+2024-03-08T07:08:45.523900+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:09:05.866995+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:09:07.200143+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:09:37.203146+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:09:38.161184+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:09:57.247346+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:09:57.247947+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:09:57.255979+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'c46e4dee796c4bbf83c23e66f080e002', 'subscriber_id': '42aab7e43483492d9833e62d346765d7', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b880>, 'notifier_id': None}
+2024-03-08T07:09:57.290967+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'
+2024-03-08T07:09:57.292020+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:09:57.314348+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:09:57.339898+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:59458 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:09:57.412684+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 59446 :: 42aab7e43483492d9833e62d346765d7
+2024-03-08T07:09:57.413516+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=42aab7e43483492d9833e62d346765d7
+2024-03-08T07:09:57.414049+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:10:08.162704+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:10:08.754799+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:10:38.755749+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:10:39.193825+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:11:09.195913+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:11:09.635649+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:11:39.636153+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:11:40.129388+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:11:49.594004+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:11:49.595186+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '16439cf7baaf4ec0a72f2e09724645dd', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:11:49.596099+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:11:49.598176+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:11:49.599416+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:11:49.651109+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'd846616876ff4e06937b019abd8e461c', 'subscriber_id': 'a899230d2be445aa9330466247ef9511', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4ab00>, 'notifier_id': None}
+2024-03-08T07:11:49.717731+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:11:49.719400+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:11:49.753758+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:11:49.799429+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:44142 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:11:49.915673+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 44126 :: a899230d2be445aa9330466247ef9511
+2024-03-08T07:11:49.916268+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=a899230d2be445aa9330466247ef9511
+2024-03-08T07:11:49.916651+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:11:49.917179+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:11:49.917434+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:12:10.129853+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:12:10.563328+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:12:40.563610+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:12:41.029824+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:12:55.408372+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:12:55.408819+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:12:55.414998+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '52d57fa844204c6aa6314a2c4feecc04', 'subscriber_id': 'eda26280e26340f09ddb2caa1517f41d', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4bbe0>, 'notifier_id': None}
+2024-03-08T07:12:55.452325+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:12:55.452684+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:12:55.471356+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:12:55.510568+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:34606 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:12:55.575715+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34598 :: eda26280e26340f09ddb2caa1517f41d
+2024-03-08T07:12:55.576067+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=eda26280e26340f09ddb2caa1517f41d
+2024-03-08T07:12:55.576247+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:13:11.030614+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:13:11.480430+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:13:41.481869+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:13:41.911386+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:14:11.912596+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:14:12.358447+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:14:42.359300+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:14:42.799379+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:14:44.328176+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:14:44.328610+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:14:44.335051+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'ee5b2510a3944ed3bfa9d571fd95dea1', 'subscriber_id': '9e9336139638447c94949ff02b014e9d', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b910>, 'notifier_id': None}
+2024-03-08T07:14:44.373676+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:14:44.373850+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:14:44.386974+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:14:44.421657+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:49214 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:14:44.479251+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 49198 :: 9e9336139638447c94949ff02b014e9d
+2024-03-08T07:14:44.479606+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=9e9336139638447c94949ff02b014e9d
+2024-03-08T07:14:44.479872+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:15:12.799916+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:15:13.231032+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:15:43.231967+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:15:44.314508+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:15:46.010085+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:15:46.011861+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:15:46.019183+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '85551e4ba7624269a1760965968982e4', 'subscriber_id': '5aa4e8dc1dd14c0aa1e0d478bca48874', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b130>, 'notifier_id': None}
+2024-03-08T07:15:46.059751+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:15:46.059960+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:15:46.076772+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:15:46.113797+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:50632 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:15:46.196026+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 50620 :: 5aa4e8dc1dd14c0aa1e0d478bca48874
+2024-03-08T07:15:46.196383+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=5aa4e8dc1dd14c0aa1e0d478bca48874
+2024-03-08T07:15:46.196586+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:16:14.315921+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:16:15.495763+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:16:37.541933+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:16:37.542502+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'd68758ab2e0b42b385333dedc8e00e97', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:16:37.542851+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:16:37.544573+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:16:37.545398+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:16:37.576229+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '546a7c3b0b144f2d9411cf8040537f47', 'subscriber_id': '02cee1ee530b44db95bf03f4799d6167', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4a170>, 'notifier_id': None}
+2024-03-08T07:16:37.602743+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:16:37.602915+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:16:37.617897+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:16:37.660711+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:41160 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:16:37.728064+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 41146 :: 02cee1ee530b44db95bf03f4799d6167
+2024-03-08T07:16:37.728436+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=02cee1ee530b44db95bf03f4799d6167
+2024-03-08T07:16:37.728742+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:16:37.729351+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:16:37.729608+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:16:45.497009+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:16:46.739436+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:17:10.928983+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:17:10.929440+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:17:10.935459+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'e0888fdbfa564823894697ea3761b3ac', 'subscriber_id': 'f4a50daabcbd4045b8d03c939782df59', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4bf40>, 'notifier_id': None}
+2024-03-08T07:17:10.963429+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:17:10.963607+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:17:10.993003+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:17:11.013917+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40366 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:17:11.089195+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 40360 :: f4a50daabcbd4045b8d03c939782df59
+2024-03-08T07:17:11.089588+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=f4a50daabcbd4045b8d03c939782df59
+2024-03-08T07:17:11.089856+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:17:16.488850+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:17:16.489277+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:17:16.494979+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'c64e0b4ee52545f3ba80ad3c99953f6a', 'subscriber_id': '95d90f96f3404b048c22e547e70c7e08', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4aef0>, 'notifier_id': None}
+2024-03-08T07:17:16.537082+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:17:16.537323+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:17:16.551577+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:17:16.587738+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:54852 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:17:16.692353+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 54848 :: 95d90f96f3404b048c22e547e70c7e08
+2024-03-08T07:17:16.692972+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=95d90f96f3404b048c22e547e70c7e08
+2024-03-08T07:17:16.693476+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:17:16.740301+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:17:17.934753+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:17:47.936412+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:17:48.779689+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:18:18.780893+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:18:19.255435+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:18:43.383537+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:18:43.383929+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:18:43.400710+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '99db3afa4adb499cb5af359d76fc043e', 'subscriber_id': '2a17b85415a941d3a2fa395915d5d747', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b6d0>, 'notifier_id': None}
+2024-03-08T07:18:43.429389+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:18:43.429562+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:18:43.443576+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:18:43.479586+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:57860 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:18:43.546024+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 57852 :: 2a17b85415a941d3a2fa395915d5d747
+2024-03-08T07:18:43.546362+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=2a17b85415a941d3a2fa395915d5d747
+2024-03-08T07:18:43.546598+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:18:49.256251+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:18:49.671863+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:19:19.674197+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:19:20.117589+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:19:50.119230+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:19:50.590972+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:20:20.593177+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:20:21.027941+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:20:22.060486+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:20:22.060936+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:20:22.067549+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '910f8bb3a9ca401580f82d9e1c52d833', 'subscriber_id': '6a011b84ffa04d73a1975734bf5d0ab4', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b010>, 'notifier_id': None}
+2024-03-08T07:20:22.107735+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:20:22.107923+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:20:22.122089+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:20:22.158985+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:49640 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:20:22.231219+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 53254 :: 6a011b84ffa04d73a1975734bf5d0ab4
+2024-03-08T07:20:22.231736+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=6a011b84ffa04d73a1975734bf5d0ab4
+2024-03-08T07:20:22.232108+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:20:39.165677+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:20:39.166063+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:20:39.171413+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'ef77116e7b1a4983a5d82edcd56fd505', 'subscriber_id': '312d9543fdc1440cbeb8b0a87fe2bf0c', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b520>, 'notifier_id': None}
+2024-03-08T07:20:39.210174+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:20:39.210455+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:20:39.225259+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:20:39.246434+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:39314 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:20:39.337736+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 39298 :: 312d9543fdc1440cbeb8b0a87fe2bf0c
+2024-03-08T07:20:39.338059+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=312d9543fdc1440cbeb8b0a87fe2bf0c
+2024-03-08T07:20:39.338295+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:20:51.027990+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:20:51.453280+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:21:12.042746+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:21:12.043130+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:21:12.048623+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '07424f0aa48b428ea836b20f5d011270', 'subscriber_id': '173a5f9ea11a4754857ec9b3886f121f', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4ab90>, 'notifier_id': None}
+2024-03-08T07:21:12.074522+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:21:12.074701+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:21:12.090194+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:21:12.128115+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:56400 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:21:12.202403+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 56394 :: 173a5f9ea11a4754857ec9b3886f121f
+2024-03-08T07:21:12.202766+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=173a5f9ea11a4754857ec9b3886f121f
+2024-03-08T07:21:12.203025+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:21:21.454511+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:21:21.891208+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:21:51.891325+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:21:52.310707+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:22:22.309488+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:22:22.753288+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:22:29.754664+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:22:29.755238+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:22:29.771122+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '002fdb97b53f45ff8c6c335294d8d2e3', 'subscriber_id': 'a6ff3d54e01349bf98af23bff8dc4b65', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4bac0>, 'notifier_id': None}
+2024-03-08T07:22:29.801713+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:22:29.801893+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:22:29.817238+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:22:29.854672+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:55368 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:22:29.942092+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 55358 :: a6ff3d54e01349bf98af23bff8dc4b65
+2024-03-08T07:22:29.942516+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=a6ff3d54e01349bf98af23bff8dc4b65
+2024-03-08T07:22:29.942811+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:22:52.754982+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:22:53.194905+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:22:54.260258+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:22:54.260971+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:22:54.267131+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '76f662bd4eb8445caa2ef4a7954b4f8c', 'subscriber_id': '0c78c744c93b4099bf368067736a3334', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b400>, 'notifier_id': None}
+2024-03-08T07:22:54.304801+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:22:54.305102+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:22:54.319488+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:22:54.339863+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:44956 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:22:54.416589+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 44954 :: 0c78c744c93b4099bf368067736a3334
+2024-03-08T07:22:54.416961+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=0c78c744c93b4099bf368067736a3334
+2024-03-08T07:22:54.417241+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:23:23.195684+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:23:23.664232+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:23:53.665329+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:23:54.640175+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:24:24.641219+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:24:25.789411+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:24:35.684043+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:24:35.684756+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '518ec09530d645efa1ee58aa365fa0a7', 'subscriber_id': '282f1e0970c84b43a5a46db39c6cdf1e', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7fe5df54af20>>, 'notifier_id': None}
+2024-03-08T07:24:35.685082+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:24:35.687300+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:24:35.688233+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:24:35.750669+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '3a56afe0b07c447b91311af16c3da323', 'subscriber_id': '1d6ac15e97e547fb8303113f9488fe25', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5deb11900>, 'notifier_id': None}
+2024-03-08T07:24:35.779117+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:24:35.779363+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:24:35.794712+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:24:35.833054+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:48664 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:24:35.888752+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 48656 :: 1d6ac15e97e547fb8303113f9488fe25
+2024-03-08T07:24:35.889115+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=1d6ac15e97e547fb8303113f9488fe25
+2024-03-08T07:24:35.889364+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:24:35.889665+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:24:35.890047+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=282f1e0970c84b43a5a46db39c6cdf1e
+2024-03-08T07:24:55.791311+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:24:57.041237+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:25:00.421929+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:00.422697+0000 | 13 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:00.430860+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '44632f87db5d4d608f33c2f15f960660', 'subscriber_id': 'e6ed643d2deb430f9be7398c9f3e3b08', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7fe5dea4b250>, 'notifier_id': None}
+2024-03-08T07:25:00.475937+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:00.476323+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:00.496040+0000 | 13 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:00.525493+0000 | 13 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:38208 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:00.634856+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 38202 :: e6ed643d2deb430f9be7398c9f3e3b08
+2024-03-08T07:25:00.635263+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=e6ed643d2deb430f9be7398c9f3e3b08
+2024-03-08T07:25:00.635535+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:02.941658+0000 | 13 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 34750 :: c60f39259ef3465c8b44b71f9fe0f420
+2024-03-08T07:25:02.941901+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy_data' for subscriber=c60f39259ef3465c8b44b71f9fe0f420
+2024-03-08T07:25:02.942075+0000 | 13 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:02.942330+0000 | 13 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:25:02.942538+0000 | 13 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=cbdf45e847b04bd1ad0bdd2b55bd27e1
+[2024-03-08 07:25:06 +0000] [1] [INFO] Handling signal: term
+[2024-03-08 07:25:06 +0000] [13] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-03-08 07:25:06 +0000] [11] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-03-08 07:25:06 +0000] [9] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-03-08 07:25:06 +0000] [10] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+2024-03-08T07:25:06.650911+0000 | 13 | opal_server.server                      | INFO  | triggered shutdown event
+2024-03-08T07:25:06.651253+0000 | 13 | opal_server.server                      | INFO  | stopping background tasks...
+[2024-03-08 07:25:06 +0000] [13] [INFO] Worker exiting (pid: 13)
+2024-03-08T07:25:06.670476+0000 | 11 | opal_server.server                      | INFO  | triggered shutdown event
+2024-03-08T07:25:06.670666+0000 | 11 | opal_server.server                      | INFO  | stopping background tasks...
+[2024-03-08 07:25:06 +0000] [11] [INFO] Worker exiting (pid: 11)
+2024-03-08T07:25:06.674424+0000 | 9 | opal_server.server                      | INFO  | triggered shutdown event
+2024-03-08T07:25:06.674666+0000 | 9 | opal_server.server                      | INFO  | stopping background tasks...
+2024-03-08T07:25:06.675294+0000 | 9 | opal_server.policy.watcher.task         | INFO  | Stopping policy watcher
+2024-03-08T07:25:06.675601+0000 | 9 | opal_common.topics.publisher            | INFO  | cancelled broadcaster keepalive task to topic: __broadcast_session_keepalive__
+2024-03-08T07:25:06.678336+0000 | 9 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:25:06.679455+0000 | 9 | opal_server.policy.watcher.task         | INFO  | Stopping policy watcher
+[2024-03-08 07:25:06 +0000] [9] [INFO] Worker exiting (pid: 9)
+2024-03-08T07:25:06.721122+0000 | 10 | opal_server.server                      | INFO  | triggered shutdown event
+2024-03-08T07:25:06.721505+0000 | 10 | opal_server.server                      | INFO  | stopping background tasks...
+[2024-03-08 07:25:06 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2024-03-08 07:25:07 +0000] [1] [INFO] Shutting down: Master
+[2024-03-08 07:25:31 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2024-03-08 07:25:31 +0000] [1] [INFO] Listening at: http://0.0.0.0:7002 (1)
+[2024-03-08 07:25:31 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+2024-03-08 07:25:31.783 | WARNING  | __config__:when_ready:34 - Finished pre loading scopes...
+[2024-03-08 07:25:31 +0000] [9] [INFO] Booting worker with pid: 9
+2024-03-08T07:25:31.849739+0000 | 9 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:25:31.850083+0000 | 9 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+[2024-03-08 07:25:31 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-08 07:25:31 +0000] [11] [INFO] Booting worker with pid: 11
+2024-03-08T07:25:31.943635+0000 | 10 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:25:31.945413+0000 | 10 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+2024-03-08T07:25:31.948548+0000 | 9 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:25:31.948906+0000 | 9 | opal_server.server                      | INFO  | leadership lock acquired, leader pid: 9
+2024-03-08T07:25:31.949094+0000 | 9 | opal_common.topics.publisher            | INFO  | started broadcaster keepalive task: topic is '__broadcast_session_keepalive__', interval is 3600 seconds
+2024-03-08T07:25:31.949278+0000 | 9 | opal_server.policy.watcher.factory      | INFO  | Policy repo will be cloned to: /opal/regoclone/opal_repo_clone
+2024-03-08T07:25:31.950491+0000 | 9 | opal_server.policy.watcher.task         | INFO  | Launching policy watcher
+2024-03-08T07:25:31.952075+0000 | 9 | opal_server.data.data_update_publisher  | INFO  | [9] Starting Polling Updates
+2024-03-08T07:25:31.952437+0000 | 9 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:25:31.952611+0000 | 9 | opal_server.policy.watcher.task         | INFO  | listening on webhook topic: 'webhook'
+2024-03-08T07:25:31.953208+0000 | 9 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '74c37e7a231b4487949d328b87d10716', 'subscriber_id': '8d4ffc35033d4aaebdb4868203664b90', 'topic': 'webhook', 'callback': <bound method BasePolicyWatcherTask._on_webhook of <opal_server.policy.watcher.task.PolicyWatcherTask object at 0x7f226ba3ebc0>>, 'notifier_id': None}
+[2024-03-08 07:25:31 +0000] [14] [INFO] Booting worker with pid: 14
+2024-03-08T07:25:31.960734+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | SKIPPED cloning policy repo, found existing repo at '/opal/regoclone/opal_repo_clone' with remotes: ['https://github.com/khandoker-tahmid-sami/Demo.git'])
+2024-03-08T07:25:31.973226+0000 | 11 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:25:31.977921+0000 | 11 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+2024-03-08T07:25:31.986284+0000 | 9 | opal_common.sources.base_policy_source  | INFO  | Launching polling task, interval: 30 seconds
+2024-03-08T07:25:31.986626+0000 | 9 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:25:32.018644+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:25:32.055413+0000 | 14 | opal_server.server                      | INFO  | OPAL was not provided with JWT encryption keys, cannot verify api requests!
+2024-03-08T07:25:32.055964+0000 | 14 | opal_server.pubsub                      | INFO  | Initializing broadcaster for server<->server communication
+2024-03-08T07:25:32.070399+0000 | 10 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:25:32.107120+0000 | 11 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:25:32.158923+0000 | 14 | opal_server.server                      | INFO  | *** OPAL Server Startup ***
+2024-03-08T07:25:32.486246+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:25:34.094485+0000 | 14 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:25:34.114406+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '50eb7fdbef7c42758cee8ae247610e92', 'subscriber_id': '8755819a49ec4a4fa6c8ab376228bb0a', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7f226ba7b760>>, 'notifier_id': None}
+2024-03-08T07:25:34.114765+0000 | 14 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:25:34.117329+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:34.120030+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:34.120781+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:34.123029+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:34.130003+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '1ecccc65d4c4450081a3117ed7639832', 'subscriber_id': 'e32e7d5041c04367940f3e10951dcba8', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a782320>, 'notifier_id': None}
+2024-03-08T07:25:34.132969+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '0b97fe57b8524d91a0b062f44c213623', 'subscriber_id': '1e7faa26c3c145f485da40171dc52c69', 'topic': 'policy_data', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a782e60>, 'notifier_id': None}
+2024-03-08T07:25:34.142331+0000 | 10 | opal_server.data.api                    | INFO  | Serving source configuration
+2024-03-08T07:25:34.143170+0000 | 10 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40528 - "GET /data/config HTTP/1.1" 200       
+2024-03-08T07:25:34.163751+0000 | 10 | opal_server.data.api                    |WARNING | Serving default all-data route, meaning DATA_CONFIG_SOURCES was not configured!
+2024-03-08T07:25:34.164237+0000 | 10 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40542 - "GET /policy-data HTTP/1.1" 200       
+2024-03-08T07:25:34.199635+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:34.199811+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:34.216838+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:34.242357+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40526 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:34.362195+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 40502 :: e32e7d5041c04367940f3e10951dcba8
+2024-03-08T07:25:34.362927+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=e32e7d5041c04367940f3e10951dcba8
+2024-03-08T07:25:34.363227+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:34.618816+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:34.619283+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:34.623633+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '9c560d5d30744b4c9c52040a32984e16', 'subscriber_id': 'e56c68b089d34fa985e92fe245b82d27', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a782b00>, 'notifier_id': None}
+2024-03-08T07:25:34.652325+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:34.652496+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:34.668650+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:34.696185+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40560 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:34.767834+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 40554 :: e56c68b089d34fa985e92fe245b82d27
+2024-03-08T07:25:34.768177+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=e56c68b089d34fa985e92fe245b82d27
+2024-03-08T07:25:34.768494+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:36.093352+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Listening for incoming events from broadcast channel (first listener started)
+2024-03-08T07:25:36.109433+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '3f70e6e811754b56b0f6c0dd0b0892ed', 'subscriber_id': '1c38c348b1ea4eefb595bb2dca4cfd3c', 'topic': '__EventNotifier_ALL_TOPICS__', 'callback': <bound method EventBroadcaster.__broadcast_notifications__ of <fastapi_websocket_pubsub.event_broadcaster.EventBroadcaster object at 0x7f226ba7af50>>, 'notifier_id': None}
+2024-03-08T07:25:36.109774+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Starting broadcaster listener
+2024-03-08T07:25:36.112124+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:36.114866+0000 | 11 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:36.150424+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '1104537e7f5d4284a9fb3c27e9ec8dbd', 'subscriber_id': '22438174c50344468e75b6a44cee91a3', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226afa2170>, 'notifier_id': None}
+2024-03-08T07:25:36.180409+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:36.180581+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:36.198491+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:36.225738+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40572 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:36.288054+0000 | 11 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 40564 :: 22438174c50344468e75b6a44cee91a3
+2024-03-08T07:25:36.288508+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=22438174c50344468e75b6a44cee91a3
+2024-03-08T07:25:36.288770+0000 | 11 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:36.289050+0000 | 11 | fastapi_websocket_pubsub.event_broadc...| INFO  | Cancelling broadcast listen task
+2024-03-08T07:25:36.289272+0000 | 11 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='__EventNotifier_ALL_TOPICS__' for subscriber=1c38c348b1ea4eefb595bb2dca4cfd3c
+2024-03-08T07:25:38.773103+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:38.773545+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:38.789373+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'ab2915d856424239a0b79debe57d138a', 'subscriber_id': 'a95664807c614848bcf4442ba8dd3c7a', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a783ac0>, 'notifier_id': None}
+2024-03-08T07:25:38.816577+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:38.816747+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:38.831413+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:38.853992+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:40586 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:38.936107+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 40584 :: a95664807c614848bcf4442ba8dd3c7a
+2024-03-08T07:25:38.936428+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=a95664807c614848bcf4442ba8dd3c7a
+2024-03-08T07:25:38.936693+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:45.959912+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:45.960432+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:45.964366+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '1df102604f664988ab73d683c62fc973', 'subscriber_id': '5ab075965aac48bbbee43e382f3f9c81', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226b04d990>, 'notifier_id': None}
+2024-03-08T07:25:45.989860+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:45.990048+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:46.004791+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:46.028942+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:42864 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:46.102105+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 42852 :: 5ab075965aac48bbbee43e382f3f9c81
+2024-03-08T07:25:46.102603+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=5ab075965aac48bbbee43e382f3f9c81
+2024-03-08T07:25:46.102934+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:25:48.405193+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:25:48.405631+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:25:48.421922+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '6ecdfc42ae984d3ba2c1c50d3ecf8678', 'subscriber_id': '3d0d2902da354638abd83c3832ef9f03', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a783400>, 'notifier_id': None}
+2024-03-08T07:25:48.449865+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:25:48.450043+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:25:48.465877+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:25:48.489473+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:42884 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:25:48.571240+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 42876 :: 3d0d2902da354638abd83c3832ef9f03
+2024-03-08T07:25:48.571641+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=3d0d2902da354638abd83c3832ef9f03
+2024-03-08T07:25:48.571924+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:26:02.487996+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:26:02.938929+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:26:09.338949+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:26:09.339386+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:26:09.343294+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '7c07ef65d1644a82b57764b099e378b8', 'subscriber_id': 'f53c9d02ea874801bd02fe4bfdfdb72e', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a7831c0>, 'notifier_id': None}
+2024-03-08T07:26:09.366903+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:26:09.367082+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:26:09.383360+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:26:09.422349+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:41888 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:26:09.494875+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 41872 :: f53c9d02ea874801bd02fe4bfdfdb72e
+2024-03-08T07:26:09.495317+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=f53c9d02ea874801bd02fe4bfdfdb72e
+2024-03-08T07:26:09.495651+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:26:23.612675+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:26:23.613057+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:26:23.618212+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '87c8f2e7a7b442038ca3b18625b330a0', 'subscriber_id': 'bb64a9225e664733b2f536ab1824930c', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a7823b0>, 'notifier_id': None}
+2024-03-08T07:26:23.645283+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:26:23.645454+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:26:23.659991+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:26:23.684997+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:57638 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:26:23.759494+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 57632 :: bb64a9225e664733b2f536ab1824930c
+2024-03-08T07:26:23.759943+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=bb64a9225e664733b2f536ab1824930c
+2024-03-08T07:26:23.760318+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:26:32.941072+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:26:32.960583+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:26:32.961286+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:26:32.969451+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '3abc114d121145c68101bbba1ddf076d', 'subscriber_id': '45bf2a92cf204a1ba8277a15799f4bac', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a7832e0>, 'notifier_id': None}
+2024-03-08T07:26:33.012879+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:26:33.013141+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:26:33.027478+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:26:33.048782+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:57622 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:26:33.126983+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 57612 :: 45bf2a92cf204a1ba8277a15799f4bac
+2024-03-08T07:26:33.127313+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=45bf2a92cf204a1ba8277a15799f4bac
+2024-03-08T07:26:33.127561+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:26:33.395117+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:27:03.396098+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:27:03.851362+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:27:21.876768+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:27:21.877140+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:27:21.882340+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '52ea938b0f634b4c9be8973eaa18104f', 'subscriber_id': '6e259dfe125b4144bdcf1cbf1ac40690', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a783490>, 'notifier_id': None}
+2024-03-08T07:27:21.907410+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:27:21.907622+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:27:21.934683+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:27:21.956098+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:49732 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:27:22.029782+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 49718 :: 6e259dfe125b4144bdcf1cbf1ac40690
+2024-03-08T07:27:22.030196+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=6e259dfe125b4144bdcf1cbf1ac40690
+2024-03-08T07:27:22.030480+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:27:33.852440+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:27:34.852274+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:27:51.507977+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:27:51.508365+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:27:51.514093+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '3e0a24b3d53243078f00ff40841061b1', 'subscriber_id': '8ba828198436451cb420055c2711f534', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a7836d0>, 'notifier_id': None}
+2024-03-08T07:27:51.553573+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:27:51.553761+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:27:51.583143+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:27:51.622412+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:49596 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:27:51.715960+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 49582 :: 8ba828198436451cb420055c2711f534
+2024-03-08T07:27:51.716311+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=8ba828198436451cb420055c2711f534
+2024-03-08T07:27:51.716583+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:28:04.853732+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:28:05.995095+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:28:35.996571+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:28:37.260933+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:29:07.262066+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:29:08.602967+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
+2024-03-08T07:29:15.303621+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:29:15.304274+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:29:15.310232+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': '8f44d35958754f64a1dd8a1d1cebb171', 'subscriber_id': '6640f249a0a849ca9a389fc40593766b', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a783b50>, 'notifier_id': None}
+2024-03-08T07:29:15.335305+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:29:15.335480+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:29:15.349893+0000 | 14 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:29:15.372437+0000 | 14 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:53350 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:29:15.423819+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 53338 :: 6640f249a0a849ca9a389fc40593766b
+2024-03-08T07:29:15.424214+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=6640f249a0a849ca9a389fc40593766b
+2024-03-08T07:29:15.424480+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:29:37.980098+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client connected
+2024-03-08T07:29:37.980465+0000 | 14 | websockets.legacy.server                | INFO  | connection open
+2024-03-08T07:29:37.985627+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | New subscription {'id': 'eab293c7ef954f86acdf5b504e0ce576', 'subscriber_id': '1c8c8489afc943b384e98bb0acabacd2', 'topic': 'policy:.', 'callback': <function RpcEventServerMethods.subscribe.<locals>.callback at 0x7f226a783910>, 'notifier_id': None}
+2024-03-08T07:29:38.016256+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Using root manifest dir path (new-fashioned): '.'        
+2024-03-08T07:29:38.016531+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Compiling manifest file .manifest
+2024-03-08T07:29:38.034134+0000 | 11 | opal_common.git.bundle_maker            | INFO  | Manifest file .manifest not found, assuming empty        
+2024-03-08T07:29:38.057661+0000 | 11 | uvicorn.protocols.http.httptools_impl   | INFO  | 172.21.0.4:57214 - "GET /policy?path=. HTTP/1.1" 200     
+2024-03-08T07:29:38.130056+0000 | 14 | fastapi_websocket_rpc.websocket_rpc_e...| INFO  | Client disconnected - 57204 :: 1c8c8489afc943b384e98bb0acabacd2
+2024-03-08T07:29:38.130440+0000 | 14 | fastapi_websocket_pubsub.event_notifier | INFO  | Removing Subscription of topic='policy:.' for subscriber=1c8c8489afc943b384e98bb0acabacd2
+2024-03-08T07:29:38.131141+0000 | 14 | websockets.legacy.server                | INFO  | connection closed
+2024-03-08T07:29:38.605080+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | Pulling changes from remote: 'origin'
+2024-03-08T07:29:39.471231+0000 | 9 | opal_common.sources.git_policy_source   | INFO  | No new commits: HEAD is at '054d30a4356a1f9a08c2f23297619872c264d770'
