@@ -58,6 +58,3 @@ patient_info_matches(user, did, location) {
 admin_did_matches(user, did) {
     data.users[user].did == did
 }
-
-
-

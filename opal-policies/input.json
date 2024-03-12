@@ -1,0 +1,9 @@
+{
+  "input": {
+    "user": "john_doe",
+    "action": "read",
+    "type": "EHR",
+    "did": "did:sov:abcde1",
+    "location": "NORWAY"
+  }
+}
