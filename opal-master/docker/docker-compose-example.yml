@@ -25,7 +25,7 @@ services:
       # - the repo we pass in this example is *public* and acts as an example repo with dummy rego policy
       # - for more info, see: https://docs.opal.ac/tutorials/track_a_git_repo
       - OPAL_POLICY_REPO_URL=https://github.com/khandoker-tahmid-sami/Demo.git
-      - OPAL_POLICY_PATH=opal-policies/
+      # - OPAL_POLICY_PATH=opal-policies/
       - OPAL_POLICY_REPO_MAIN_BRANCH=main
       # in this example we will use a polling interval of 30 seconds to check for new policy updates (git commits affecting the rego policy).
       # however, it is better to utilize a git *webhook* to trigger the server to check for changes only when the repo has new commits.
